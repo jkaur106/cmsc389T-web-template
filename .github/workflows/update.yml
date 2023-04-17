@@ -1,0 +1,19 @@
+name: update workflow
+on:
+  push:
+
+jobs:
+  clone:
+    name: update
+    runs-on: ubuntu-latest
+    steps:
+    - name: update
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.HOST }}
+        username: ${{ secrets.USERNAME }}
+        password: ${{ secrets.PASSWORD }}
+        port: ${{ secrets.PORT }}
+        script: |
+        cd cd /pub/${{ secrets.USERNAME }}/cmsc389T-web-template
+        git pull
