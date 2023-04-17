@@ -1,9 +1,8 @@
 name: clone workflow
 on:
   workflow_dispatch:
-  
 jobs:
-  clone:
+  job_one:
     name: Clone
     runs-on: ubuntu-latest
     steps:
