@@ -2,11 +2,11 @@ name: clone workflow
 on:
   workflow_dispatch:
 jobs:
-  job_one:
+  clone:
     name: Clone
     runs-on: ubuntu-latest
     steps:
-      - name: testing
+      - name: clone
         uses: appleboy/ssh-action@master
         with:
           host: ${{ secrets.HOST }}
@@ -14,5 +14,5 @@ jobs:
           password: ${{ secrets.PASSWORD }}
           port: ${{ secrets.PORT }}
           script: |
-            cd /pub/jkaur106/
+            cd /pub/jkaur106
             git clone https://github.com/jkaur106/cmsc389T-web-template.git
